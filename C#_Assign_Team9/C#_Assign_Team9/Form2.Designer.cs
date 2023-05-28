@@ -40,6 +40,11 @@
             progressBar2 = new ProgressBar();
             panel1 = new Panel();
             Naration = new Label();
+            label2 = new Label();
+            BetToChar1 = new RadioButton();
+            BetToChar2 = new RadioButton();
+            BetMoney = new TextBox();
+            timer2 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)CharacterImage1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)CharacterImage2).BeginInit();
             panel1.SuspendLayout();
@@ -62,11 +67,10 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Location = new Point(885, 22);
+            label1.Location = new Point(880, 22);
             label1.Name = "label1";
-            label1.Size = new Size(54, 15);
+            label1.Size = new Size(0, 15);
             label1.TabIndex = 1;
-            label1.Text = "소지금 2";
             label1.Click += label1_Click;
             // 
             // progressBar1
@@ -144,6 +148,54 @@
             Naration.TabIndex = 10;
             Naration.Text = "Nothing";
             Naration.TextAlign = ContentAlignment.MiddleCenter;
+            Naration.Click += Naration_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(824, 22);
+            label2.Name = "label2";
+            label2.Size = new Size(50, 15);
+            label2.TabIndex = 10;
+            label2.Text = "소지금 :";
+            label2.Click += label2_Click_2;
+            // 
+            // BetToChar1
+            // 
+            BetToChar1.AutoSize = true;
+            BetToChar1.Location = new Point(-1, 256);
+            BetToChar1.Name = "BetToChar1";
+            BetToChar1.Size = new Size(50, 19);
+            BetToChar1.TabIndex = 11;
+            BetToChar1.TabStop = true;
+            BetToChar1.Text = "BetA";
+            BetToChar1.UseVisualStyleBackColor = true;
+            BetToChar1.CheckedChanged += BetToChar1_CheckedChanged_1;
+            // 
+            // BetToChar2
+            // 
+            BetToChar2.AutoSize = true;
+            BetToChar2.Location = new Point(-1, 335);
+            BetToChar2.Name = "BetToChar2";
+            BetToChar2.Size = new Size(49, 19);
+            BetToChar2.TabIndex = 12;
+            BetToChar2.TabStop = true;
+            BetToChar2.Text = "Bet2";
+            BetToChar2.UseVisualStyleBackColor = true;
+            BetToChar2.CheckedChanged += BetToChar2_CheckedChanged;
+            // 
+            // BetMoney
+            // 
+            BetMoney.Location = new Point(-1, 297);
+            BetMoney.Name = "BetMoney";
+            BetMoney.Size = new Size(100, 23);
+            BetMoney.TabIndex = 13;
+            BetMoney.TextChanged += BetMoney_TextChanged;
+            // 
+            // timer2
+            // 
+            timer2.Enabled = true;
+            timer2.Tick += timer2_Tick;
             // 
             // Form2
             // 
@@ -153,6 +205,10 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(984, 561);
+            Controls.Add(BetMoney);
+            Controls.Add(BetToChar2);
+            Controls.Add(BetToChar1);
+            Controls.Add(label2);
             Controls.Add(panel1);
             Controls.Add(progressBar2);
             Controls.Add(FinishLine);
@@ -185,5 +241,10 @@
         private ProgressBar progressBar2;
         private Panel panel1;
         private Label Naration;
+        private Label label2;
+        private RadioButton BetToChar1;
+        private RadioButton BetToChar2;
+        private TextBox BetMoney;
+        private System.Windows.Forms.Timer timer2;
     }
 }

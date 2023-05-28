@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mygee\\source\\repos\\C#_Assign_Team9\\C#_Assign_Team9\\C#_Assign_Team9.csproj": {}
+    "C:\\Users\\mygee\\OneDrive\\문서\\C_Term\\C#_Assign_Team9\\C#_Assign_Team9\\C#_Assign_Team9.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mygee\\source\\repos\\C#_Assign_Team9\\C#_Assign_Team9\\C#_Assign_Team9.csproj": {
+    "C:\\Users\\mygee\\OneDrive\\문서\\C_Term\\C#_Assign_Team9\\C#_Assign_Team9\\C#_Assign_Team9.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mygee\\source\\repos\\C#_Assign_Team9\\C#_Assign_Team9\\C#_Assign_Team9.csproj",
+        "projectUniqueName": "C:\\Users\\mygee\\OneDrive\\문서\\C_Term\\C#_Assign_Team9\\C#_Assign_Team9\\C#_Assign_Team9.csproj",
         "projectName": "C#_Assign_Team9",
-        "projectPath": "C:\\Users\\mygee\\source\\repos\\C#_Assign_Team9\\C#_Assign_Team9\\C#_Assign_Team9.csproj",
+        "projectPath": "C:\\Users\\mygee\\OneDrive\\문서\\C_Term\\C#_Assign_Team9\\C#_Assign_Team9\\C#_Assign_Team9.csproj",
         "packagesPath": "C:\\Users\\mygee\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mygee\\source\\repos\\C#_Assign_Team9\\C#_Assign_Team9\\obj\\",
+        "outputPath": "C:\\Users\\mygee\\OneDrive\\문서\\C_Term\\C#_Assign_Team9\\C#_Assign_Team9\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

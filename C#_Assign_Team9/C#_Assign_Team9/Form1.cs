@@ -1,10 +1,16 @@
+using System.Diagnostics;
+
 namespace C__Assign_Team9
 {
     public partial class Form1 : Form
     {
+        CharacterManager characterManager;
+
         public Form1()
         {
+            characterManager = CharacterManager.Instance();
             InitializeComponent();
+
         }
 
         public void setData(String data)
@@ -14,14 +20,35 @@ namespace C__Assign_Team9
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (characterManager.character1 == null) // 캐릭터1 or 캐릭터2가 생성안되었는지 체크
+            {
+                characterManager.character1 = new Character("A", 50);
+            }
+
+            if (characterManager.character2 == null)
+            {
+                characterManager.character2 = new Character("B", 10);
+            }
+            ChangeToForm2(); // 화면 이동
+        }
+
+        private void ChangeToForm2() // Form2로 넘어가는 함수
+        {
             this.Hide();
             Form2 showForm2 = new Form2();
             showForm2.Owner = this;
             showForm2.Show();
+        }
 
+        private void NameChangeButton1_Click(object sender, EventArgs e)
+        {
+            characterManager.character1 = new Character(NameInput1.Text, 10);
+            Debug.Print(characterManager.character1.GetName());
+        }
 
-
-
+        private void NameChangeButton2_Click(object sender, EventArgs e)
+        {
+            characterManager.character2 = new Character(NameInput2.Text, 10);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -50,6 +77,13 @@ namespace C__Assign_Team9
         }
 
         private void textBox3_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        private void NameInput1_TextChanged(object sender, EventArgs e)
         {
 
         }

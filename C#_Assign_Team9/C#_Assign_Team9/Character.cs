@@ -13,7 +13,8 @@ namespace C__Assign_Team9
         string name; // 캐릭터 이름
         int speed; // 캐릭터 속도
         string[] skillList; // 스킬이름 항목
-        
+        int wallet = 5000; // 소지금
+
         public Character(string name, int speed)
         {
             this.name = name;
@@ -28,5 +29,9 @@ namespace C__Assign_Team9
         {
             return speed;
         }
+
+        
+
+
     }
 }

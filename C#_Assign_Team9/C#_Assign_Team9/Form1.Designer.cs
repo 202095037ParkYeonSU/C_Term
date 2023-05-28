@@ -30,10 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             startButton = new Button();
-            label1 = new Label();
             label2 = new Label();
             CharacterImage1 = new PictureBox();
             pictureBox1 = new PictureBox();
+            NameInput1 = new TextBox();
+            NameChangeButton1 = new Button();
+            NameInput2 = new TextBox();
+            NameChangeButton2 = new Button();
             ((System.ComponentModel.ISupportInitialize)CharacterImage1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -51,17 +54,6 @@
             startButton.UseVisualStyleBackColor = false;
             startButton.Click += button1_Click;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Location = new Point(853, 35);
-            label1.Name = "label1";
-            label1.Size = new Size(71, 15);
-            label1.TabIndex = 1;
-            label1.Text = "코인 표시창";
-            label1.Click += label1_Click;
-            // 
             // label2
             // 
             label2.BackColor = Color.Transparent;
@@ -70,7 +62,7 @@
             label2.Name = "label2";
             label2.Size = new Size(267, 131);
             label2.TabIndex = 4;
-            label2.Text = "신라무스메\r\n(프리티더비)";
+            label2.Text = "Racing\r\nGame";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // CharacterImage1
@@ -97,16 +89,60 @@
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
             // 
+            // NameInput1
+            // 
+            NameInput1.Location = new Point(225, 245);
+            NameInput1.Multiline = true;
+            NameInput1.Name = "NameInput1";
+            NameInput1.Size = new Size(80, 25);
+            NameInput1.TabIndex = 7;
+            NameInput1.Text = "A";
+            NameInput1.TextAlign = HorizontalAlignment.Center;
+            NameInput1.TextChanged += NameInput1_TextChanged;
+            // 
+            // NameChangeButton1
+            // 
+            NameChangeButton1.Location = new Point(225, 216);
+            NameChangeButton1.Name = "NameChangeButton1";
+            NameChangeButton1.Size = new Size(80, 25);
+            NameChangeButton1.TabIndex = 8;
+            NameChangeButton1.Text = "button1";
+            NameChangeButton1.UseVisualStyleBackColor = true;
+            NameChangeButton1.Click += NameChangeButton1_Click;
+            // 
+            // NameInput2
+            // 
+            NameInput2.Location = new Point(681, 245);
+            NameInput2.Multiline = true;
+            NameInput2.Name = "NameInput2";
+            NameInput2.Size = new Size(80, 25);
+            NameInput2.TabIndex = 9;
+            NameInput2.Text = "B";
+            NameInput2.TextAlign = HorizontalAlignment.Center;
+            // 
+            // NameChangeButton2
+            // 
+            NameChangeButton2.Location = new Point(681, 214);
+            NameChangeButton2.Name = "NameChangeButton2";
+            NameChangeButton2.Size = new Size(80, 25);
+            NameChangeButton2.TabIndex = 10;
+            NameChangeButton2.Text = "button1";
+            NameChangeButton2.UseVisualStyleBackColor = true;
+            NameChangeButton2.Click += NameChangeButton2_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(984, 561);
+            Controls.Add(NameChangeButton2);
+            Controls.Add(NameInput2);
+            Controls.Add(NameChangeButton1);
+            Controls.Add(NameInput1);
             Controls.Add(pictureBox1);
             Controls.Add(CharacterImage1);
             Controls.Add(label2);
-            Controls.Add(label1);
             Controls.Add(startButton);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
@@ -121,9 +157,12 @@
         #endregion
 
         private Button startButton;
-        private Label label1;
         private Label label2;
         private PictureBox CharacterImage1;
         private PictureBox pictureBox1;
+        private TextBox NameInput1;
+        private Button NameChangeButton1;
+        private TextBox NameInput2;
+        private Button NameChangeButton2;
     }
 }
