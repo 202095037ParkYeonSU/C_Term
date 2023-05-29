@@ -37,8 +37,10 @@
             NameChangeButton1 = new Button();
             NameInput2 = new TextBox();
             NameChangeButton2 = new Button();
+            VS_Mark = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)CharacterImage1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)VS_Mark).BeginInit();
             SuspendLayout();
             // 
             // startButton
@@ -47,7 +49,7 @@
             startButton.FlatStyle = FlatStyle.Flat;
             startButton.ForeColor = SystemColors.ControlText;
             startButton.Image = (Image)resources.GetObject("startButton.Image");
-            startButton.Location = new Point(345, 292);
+            startButton.Location = new Point(345, 457);
             startButton.Name = "startButton";
             startButton.Size = new Size(284, 92);
             startButton.TabIndex = 0;
@@ -106,7 +108,7 @@
             NameChangeButton1.Name = "NameChangeButton1";
             NameChangeButton1.Size = new Size(80, 25);
             NameChangeButton1.TabIndex = 8;
-            NameChangeButton1.Text = "button1";
+            NameChangeButton1.Text = "이름변경!";
             NameChangeButton1.UseVisualStyleBackColor = true;
             NameChangeButton1.Click += NameChangeButton1_Click;
             // 
@@ -126,9 +128,21 @@
             NameChangeButton2.Name = "NameChangeButton2";
             NameChangeButton2.Size = new Size(80, 25);
             NameChangeButton2.TabIndex = 10;
-            NameChangeButton2.Text = "button1";
+            NameChangeButton2.Text = "이름변경!";
             NameChangeButton2.UseVisualStyleBackColor = true;
             NameChangeButton2.Click += NameChangeButton2_Click;
+            // 
+            // VS_Mark
+            // 
+            VS_Mark.BackColor = Color.Transparent;
+            VS_Mark.Image = (Image)resources.GetObject("VS_Mark.Image");
+            VS_Mark.Location = new Point(404, 245);
+            VS_Mark.Name = "VS_Mark";
+            VS_Mark.Size = new Size(184, 190);
+            VS_Mark.SizeMode = PictureBoxSizeMode.StretchImage;
+            VS_Mark.TabIndex = 11;
+            VS_Mark.TabStop = false;
+            VS_Mark.Click += pictureBox2_Click;
             // 
             // Form1
             // 
@@ -136,6 +150,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(984, 561);
+            Controls.Add(VS_Mark);
             Controls.Add(NameChangeButton2);
             Controls.Add(NameInput2);
             Controls.Add(NameChangeButton1);
@@ -150,6 +165,7 @@
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)CharacterImage1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)VS_Mark).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -164,5 +180,6 @@
         private Button NameChangeButton1;
         private TextBox NameInput2;
         private Button NameChangeButton2;
+        private PictureBox VS_Mark;
     }
 }

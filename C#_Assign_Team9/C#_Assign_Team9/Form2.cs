@@ -60,6 +60,8 @@ namespace C__Assign_Team9
             LocationChar1 = CharacterImage1.Location;
             LocationChar2 = CharacterImage2.Location;
 
+            Char1Name.Text = characterManager.character1.GetName();
+            Char2Name.Text = characterManager.character2.GetName();
 
         }
 
@@ -70,7 +72,7 @@ namespace C__Assign_Team9
             BetToChar1.Enabled = false;
             BetToChar2.Enabled = false;
             timer1.Enabled = true;
-
+            HowToPlay.Enabled = false;
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -83,7 +85,10 @@ namespace C__Assign_Team9
             CharacterImage1.Left = CharacterImage1.Left + characterManager.character1.GetSpeed();   // 캐릭터들 이동 속도
             CharacterImage2.Left = CharacterImage2.Left + characterManager.character2.GetSpeed();
 
-            Naration.Text = $"{characterManager.character1.GetName()} : {CharacterImage1.Left}, {characterManager.character2.GetName()} : {CharacterImage2.Left}";  // 캐릭터별 현재 위치 프린트
+            Location1.Text = $"{characterManager.character1.GetName()} : {Math.Ceiling(((double)CharacterImage1.Left / 800) * 100)} %";   // 현재 진행상황 표시
+            Location2.Text = $"{characterManager.character2.GetName()} : {Math.Ceiling(((double)CharacterImage2.Left / 800) * 100)} %";
+
+            //Naration.Text = $"{characterManager.character1.GetName()} : {CharacterImage1.Left}, {characterManager.character2.GetName()} : {CharacterImage2.Left}";  // 캐릭터별 현재 위치 프린트
 
             if (CharacterImage1.Left >= finish) // 도착선 밟으면 게임 종료
             {
@@ -158,15 +163,20 @@ namespace C__Assign_Team9
             CharacterImage2.Location = LocationChar2;
             BetToChar1.Enabled = true;
             BetToChar2.Enabled = true;
+            HowToPlay.Enabled = true;
             BetMoney.Text = "";
         }
 
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            label1.Text = wallet.ToString();
+            CurrentMoney.Text = wallet.ToString();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("간단한 게임설명!\n이길것 같은 개체에 베팅을 해서 \n맞추면 베팅금액의 1.5배, 틀리면 베팅금액 사라짐\n소지금이 0원이되면 게임오버, 2만원을 넘으면 승리!");
+        }
 
 
 
@@ -244,6 +254,43 @@ namespace C__Assign_Team9
         }
 
         private void Naration_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+
+        private void HowToPlayExplain_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Lacation2_Click(object sender, EventArgs e)
         {
 
         }

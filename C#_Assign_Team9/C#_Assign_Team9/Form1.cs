@@ -43,7 +43,7 @@ namespace C__Assign_Team9
         private void NameChangeButton1_Click(object sender, EventArgs e)
         {
             characterManager.character1 = new Character(NameInput1.Text, 10);
-            Debug.Print(characterManager.character1.GetName());
+            //Debug.Print(characterManager.character1.GetName());
         }
 
         private void NameChangeButton2_Click(object sender, EventArgs e)
@@ -81,9 +81,14 @@ namespace C__Assign_Team9
 
         }
 
-        
+
 
         private void NameInput1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
 
         }

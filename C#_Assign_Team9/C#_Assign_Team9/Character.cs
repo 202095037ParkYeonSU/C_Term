@@ -21,6 +21,7 @@ namespace C__Assign_Team9
             this.speed = speed;
             skillList = new string[0];
         }
+        
         public string GetName() 
         { 
             return name;
@@ -30,6 +31,10 @@ namespace C__Assign_Team9
             return speed;
         }
 
+        public string[] GetSkillList()
+        {
+            return skillList;
+        }
         
 
 

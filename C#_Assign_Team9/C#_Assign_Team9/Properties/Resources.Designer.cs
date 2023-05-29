@@ -63,6 +63,36 @@ namespace C__Assign_Team9.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap DogCharL {
+            get {
+                object obj = ResourceManager.GetObject("DogCharL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap DogCharR {
+            get {
+                object obj = ResourceManager.GetObject("DogCharR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap ezgif_com_resize {
+            get {
+                object obj = ResourceManager.GetObject("ezgif.com-resize", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap Green_jpg {
             get {
                 object obj = ResourceManager.GetObject("Green.jpg", resourceCulture);
@@ -96,6 +126,26 @@ namespace C__Assign_Team9.Properties {
         internal static System.Drawing.Bitmap pngwing_com {
             get {
                 object obj = ResourceManager.GetObject("pngwing.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap QuestionMark {
+            get {
+                object obj = ResourceManager.GetObject("QuestionMark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap QuestionMark_re {
+            get {
+                object obj = ResourceManager.GetObject("QuestionMark_re", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +196,46 @@ namespace C__Assign_Team9.Properties {
         internal static System.Drawing.Bitmap Start_btn1 {
             get {
                 object obj = ResourceManager.GetObject("Start_btn1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap VS {
+            get {
+                object obj = ResourceManager.GetObject("VS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Wood_ui_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("Wood_ui-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Wood_ui_resize {
+            get {
+                object obj = ResourceManager.GetObject("Wood_ui_resize", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Wood_ui_resize__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Wood_ui_resize (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

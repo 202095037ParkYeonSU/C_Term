@@ -31,7 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             button1 = new Button();
-            label1 = new Label();
+            CurrentMoney = new Label();
             progressBar1 = new ProgressBar();
             CharacterImage1 = new PictureBox();
             CharacterImage2 = new PictureBox();
@@ -45,6 +45,12 @@
             BetToChar2 = new RadioButton();
             BetMoney = new TextBox();
             timer2 = new System.Windows.Forms.Timer(components);
+            Char1Name = new Label();
+            Char2Name = new Label();
+            HowToPlay = new Button();
+            HowToPlayExplain = new Label();
+            Location1 = new Label();
+            Location2 = new Label();
             ((System.ComponentModel.ISupportInitialize)CharacterImage1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)CharacterImage2).BeginInit();
             panel1.SuspendLayout();
@@ -58,24 +64,25 @@
             button1.Image = (Image)resources.GetObject("button1.Image");
             button1.Location = new Point(354, 22);
             button1.Name = "button1";
-            button1.Size = new Size(284, 95);
+            button1.Size = new Size(284, 98);
             button1.TabIndex = 0;
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // label1
+            // CurrentMoney
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Location = new Point(880, 22);
-            label1.Name = "label1";
-            label1.Size = new Size(0, 15);
-            label1.TabIndex = 1;
-            label1.Click += label1_Click;
+            CurrentMoney.AutoSize = true;
+            CurrentMoney.BackColor = Color.Transparent;
+            CurrentMoney.Location = new Point(881, 27);
+            CurrentMoney.Name = "CurrentMoney";
+            CurrentMoney.Size = new Size(35, 15);
+            CurrentMoney.TabIndex = 1;
+            CurrentMoney.Text = "5000";
+            CurrentMoney.Click += label1_Click;
             // 
             // progressBar1
             // 
-            progressBar1.Location = new Point(100, 285);
+            progressBar1.Location = new Point(100, 256);
             progressBar1.Maximum = 10000;
             progressBar1.Name = "progressBar1";
             progressBar1.Size = new Size(800, 3);
@@ -88,7 +95,7 @@
             CharacterImage1.AccessibleRole = AccessibleRole.None;
             CharacterImage1.BackColor = Color.Transparent;
             CharacterImage1.Image = Properties.Resources.RunningDog;
-            CharacterImage1.Location = new Point(100, 238);
+            CharacterImage1.Location = new Point(100, 209);
             CharacterImage1.Name = "CharacterImage1";
             CharacterImage1.Size = new Size(80, 40);
             CharacterImage1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -101,7 +108,7 @@
             CharacterImage2.AccessibleRole = AccessibleRole.None;
             CharacterImage2.BackColor = Color.Transparent;
             CharacterImage2.Image = Properties.Resources.RunningDog;
-            CharacterImage2.Location = new Point(100, 335);
+            CharacterImage2.Location = new Point(100, 280);
             CharacterImage2.Name = "CharacterImage2";
             CharacterImage2.Size = new Size(80, 40);
             CharacterImage2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -118,13 +125,13 @@
             FinishLine.BackColor = Color.Gainsboro;
             FinishLine.Location = new Point(900, 209);
             FinishLine.Name = "FinishLine";
-            FinishLine.Size = new Size(10, 240);
+            FinishLine.Size = new Size(10, 169);
             FinishLine.TabIndex = 7;
             FinishLine.Click += label2_Click_1;
             // 
             // progressBar2
             // 
-            progressBar2.Location = new Point(100, 381);
+            progressBar2.Location = new Point(100, 326);
             progressBar2.Maximum = 10000;
             progressBar2.Name = "progressBar2";
             progressBar2.Size = new Size(800, 3);
@@ -133,18 +140,21 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.Transparent;
             panel1.Controls.Add(Naration);
-            panel1.Location = new Point(255, 411);
+            panel1.Location = new Point(337, 385);
             panel1.Name = "panel1";
-            panel1.Size = new Size(465, 138);
+            panel1.Size = new Size(315, 175);
             panel1.TabIndex = 9;
+            panel1.Paint += panel1_Paint;
             // 
             // Naration
             // 
             Naration.BackColor = Color.Transparent;
-            Naration.Location = new Point(141, 30);
+            Naration.Image = Properties.Resources.Wood_ui_resize__1_;
+            Naration.Location = new Point(19, 11);
             Naration.Name = "Naration";
-            Naration.Size = new Size(188, 76);
+            Naration.Size = new Size(282, 156);
             Naration.TabIndex = 10;
             Naration.Text = "Nothing";
             Naration.TextAlign = ContentAlignment.MiddleCenter;
@@ -152,18 +162,20 @@
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(824, 22);
+            label2.BackColor = Color.Transparent;
+            label2.Image = Properties.Resources.ezgif_com_resize;
+            label2.Location = new Point(761, 22);
             label2.Name = "label2";
-            label2.Size = new Size(50, 15);
+            label2.Size = new Size(114, 25);
             label2.TabIndex = 10;
             label2.Text = "소지금 :";
+            label2.TextAlign = ContentAlignment.MiddleRight;
             label2.Click += label2_Click_2;
             // 
             // BetToChar1
             // 
             BetToChar1.AutoSize = true;
-            BetToChar1.Location = new Point(-1, 256);
+            BetToChar1.Location = new Point(-2, 209);
             BetToChar1.Name = "BetToChar1";
             BetToChar1.Size = new Size(50, 19);
             BetToChar1.TabIndex = 11;
@@ -175,7 +187,7 @@
             // BetToChar2
             // 
             BetToChar2.AutoSize = true;
-            BetToChar2.Location = new Point(-1, 335);
+            BetToChar2.Location = new Point(-1, 301);
             BetToChar2.Name = "BetToChar2";
             BetToChar2.Size = new Size(49, 19);
             BetToChar2.TabIndex = 12;
@@ -186,9 +198,9 @@
             // 
             // BetMoney
             // 
-            BetMoney.Location = new Point(-1, 297);
+            BetMoney.Location = new Point(-1, 256);
             BetMoney.Name = "BetMoney";
-            BetMoney.Size = new Size(100, 23);
+            BetMoney.Size = new Size(83, 23);
             BetMoney.TabIndex = 13;
             BetMoney.TextChanged += BetMoney_TextChanged;
             // 
@@ -196,6 +208,79 @@
             // 
             timer2.Enabled = true;
             timer2.Tick += timer2_Tick;
+            // 
+            // Char1Name
+            // 
+            Char1Name.BackColor = Color.Transparent;
+            Char1Name.Font = new Font("한컴 말랑말랑 Bold", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point);
+            Char1Name.Image = Properties.Resources.DogCharR;
+            Char1Name.ImageAlign = ContentAlignment.MiddleLeft;
+            Char1Name.Location = new Point(-2, 404);
+            Char1Name.Name = "Char1Name";
+            Char1Name.Size = new Size(170, 156);
+            Char1Name.TabIndex = 14;
+            Char1Name.Text = "Char1Name";
+            Char1Name.TextAlign = ContentAlignment.TopCenter;
+            Char1Name.Click += label3_Click_2;
+            // 
+            // Char2Name
+            // 
+            Char2Name.BackColor = Color.Transparent;
+            Char2Name.Font = new Font("한컴 말랑말랑 Bold", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point);
+            Char2Name.Image = Properties.Resources.DogCharL;
+            Char2Name.ImageAlign = ContentAlignment.MiddleRight;
+            Char2Name.Location = new Point(814, 404);
+            Char2Name.Name = "Char2Name";
+            Char2Name.Size = new Size(170, 156);
+            Char2Name.TabIndex = 15;
+            Char2Name.Text = "Char2Name";
+            Char2Name.TextAlign = ContentAlignment.TopCenter;
+            Char2Name.Click += label4_Click;
+            // 
+            // HowToPlay
+            // 
+            HowToPlay.BackColor = Color.Transparent;
+            HowToPlay.FlatStyle = FlatStyle.Flat;
+            HowToPlay.Image = Properties.Resources.QuestionMark_re;
+            HowToPlay.Location = new Point(22, 12);
+            HowToPlay.Name = "HowToPlay";
+            HowToPlay.Size = new Size(36, 37);
+            HowToPlay.TabIndex = 16;
+            HowToPlay.UseVisualStyleBackColor = false;
+            HowToPlay.Click += button2_Click;
+            // 
+            // HowToPlayExplain
+            // 
+            HowToPlayExplain.AutoSize = true;
+            HowToPlayExplain.BackColor = Color.Transparent;
+            HowToPlayExplain.Font = new Font("Sitka Subheading", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            HowToPlayExplain.ForeColor = Color.FromArgb(255, 128, 0);
+            HowToPlayExplain.Location = new Point(-1, 52);
+            HowToPlayExplain.Name = "HowToPlayExplain";
+            HowToPlayExplain.Size = new Size(103, 23);
+            HowToPlayExplain.TabIndex = 17;
+            HowToPlayExplain.Text = "How To Play";
+            HowToPlayExplain.TextAlign = ContentAlignment.MiddleCenter;
+            HowToPlayExplain.Click += HowToPlayExplain_Click;
+            // 
+            // Location1
+            // 
+            Location1.AutoSize = true;
+            Location1.Location = new Point(916, 244);
+            Location1.Name = "Location1";
+            Location1.Size = new Size(60, 15);
+            Location1.TabIndex = 18;
+            Location1.Text = "Location1";
+            // 
+            // Location2
+            // 
+            Location2.AutoSize = true;
+            Location2.Location = new Point(916, 314);
+            Location2.Name = "Location2";
+            Location2.Size = new Size(60, 15);
+            Location2.TabIndex = 19;
+            Location2.Text = "Location2";
+            Location2.Click += Lacation2_Click;
             // 
             // Form2
             // 
@@ -205,6 +290,12 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(984, 561);
+            Controls.Add(Location2);
+            Controls.Add(Location1);
+            Controls.Add(HowToPlayExplain);
+            Controls.Add(HowToPlay);
+            Controls.Add(Char2Name);
+            Controls.Add(Char1Name);
             Controls.Add(BetMoney);
             Controls.Add(BetToChar2);
             Controls.Add(BetToChar1);
@@ -215,7 +306,7 @@
             Controls.Add(CharacterImage2);
             Controls.Add(CharacterImage1);
             Controls.Add(progressBar1);
-            Controls.Add(label1);
+            Controls.Add(CurrentMoney);
             Controls.Add(button1);
             ForeColor = Color.Transparent;
             Name = "Form2";
@@ -232,7 +323,7 @@
         #endregion
 
         private Button button1;
-        private Label label1;
+        private Label CurrentMoney;
         private ProgressBar progressBar1;
         private PictureBox CharacterImage1;
         private PictureBox CharacterImage2;
@@ -246,5 +337,11 @@
         private RadioButton BetToChar2;
         private TextBox BetMoney;
         private System.Windows.Forms.Timer timer2;
+        private Label Char1Name;
+        private Label Char2Name;
+        private Button HowToPlay;
+        private Label HowToPlayExplain;
+        private Label Location1;
+        private Label Location2;
     }
 }
