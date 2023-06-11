@@ -13,7 +13,7 @@ namespace C__Assign_Team9
 
         public static CharacterManager Instance()
         {
-            if(staticSingleton == null) 
+            if (staticSingleton == null)
             {
                 staticSingleton = new CharacterManager();
             }

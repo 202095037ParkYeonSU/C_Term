@@ -21,7 +21,7 @@ namespace C__Assign_Team9
         int betMoney; // 배팅금
         Point LocationChar1, LocationChar2;
         Character winCharacter, loseCharacter;
-        Random rnd = new Random();
+
 
 
         private void setBetMoney() // 배팅머니 입력창에 text값을 변수로 가져오는 함수
@@ -36,7 +36,6 @@ namespace C__Assign_Team9
             init();
 
             //Debug.Print(characterManager.character1.GetName());
-
 
         }
 
@@ -67,12 +66,15 @@ namespace C__Assign_Team9
 
         private void button1_Click(object sender, EventArgs e)
         {
-            setBetMoney();
 
+            setBetMoney();
             BetToChar1.Enabled = false;
             BetToChar2.Enabled = false;
             timer1.Enabled = true;
             HowToPlay.Enabled = false;
+            percentTimer.Start(); // 확률 계산 시작
+
+
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -81,18 +83,19 @@ namespace C__Assign_Team9
 
             int finish = FinishLine.Left;   // 도착점
 
-
             CharacterImage1.Left = CharacterImage1.Left + characterManager.character1.GetSpeed();   // 캐릭터들 이동 속도
             CharacterImage2.Left = CharacterImage2.Left + characterManager.character2.GetSpeed();
 
-            Location1.Text = $"{characterManager.character1.GetName()} : {Math.Ceiling(((double)CharacterImage1.Left / 800) * 100)} %";   // 현재 진행상황 표시
-            Location2.Text = $"{characterManager.character2.GetName()} : {Math.Ceiling(((double)CharacterImage2.Left / 800) * 100)} %";
+            Location1.Text = $"{characterManager.character1.GetName()} : {Math.Ceiling((((double)CharacterImage1.Left - 100) / 800) * 100)} %";   // 현재 진행상황 표시
+            Location2.Text = $"{characterManager.character2.GetName()} : {Math.Ceiling((((double)CharacterImage2.Left - 100) / 800) * 100)} %";
 
+            Narator();
             //Naration.Text = $"{characterManager.character1.GetName()} : {CharacterImage1.Left}, {characterManager.character2.GetName()} : {CharacterImage2.Left}";  // 캐릭터별 현재 위치 프린트
 
             if (CharacterImage1.Left >= finish) // 도착선 밟으면 게임 종료
             {
                 timer1.Enabled = false;
+                percentTimer.Stop(); // 확률 계산 종료
                 Naration.Text = $"게임 종료! {characterManager.character1.GetName()} 승리!";
                 GameResult = true;
 
@@ -108,6 +111,7 @@ namespace C__Assign_Team9
             else if (CharacterImage2.Left >= finish)
             {
                 timer1.Enabled = false;
+                percentTimer.Stop(); // 확률 계산 종료
                 Naration.Text = $"게임 종료! {characterManager.character2.GetName()} 승리!";
                 GameResult = false;
 
@@ -119,8 +123,6 @@ namespace C__Assign_Team9
                 // 캐릭터들의 위치 초기화 및 버튼 재활성화
                 reSetting();
             }
-
-
 
 
         }
@@ -178,8 +180,63 @@ namespace C__Assign_Team9
             MessageBox.Show("간단한 게임설명!\n이길것 같은 개체에 베팅을 해서 \n맞추면 베팅금액의 1.5배, 틀리면 베팅금액 사라짐\n소지금이 0원이되면 게임오버, 2만원을 넘으면 승리!");
         }
 
+        private void Narator()
+        {
+            if (CharacterImage1.Left > CharacterImage2.Left)
+            {
+                Naration.Text = $"{characterManager.character1.GetName()}가 선두를 차지중입니다!";
+            }
+            else if (CharacterImage2.Left > CharacterImage1.Left)
+            {
+                Naration.Text = $"{characterManager.character2.GetName()}가 선두를 차지중입니다!";
+            }
+        }
 
+        private void UpdateCharacterSpeedLabels() //속도가 제대로 잘 바뀌나 테스트 용도
+        {
+            if (characterManager.character1 != null)
+            {
+                testlabel1.Text = $"주자 1: {characterManager.character1.GetSpeed()}";
+            }
 
+            if (characterManager.character2 != null)
+            {
+                testlabel3.Text = $"주자 2: {characterManager.character2.GetSpeed()}";
+            }
+        }
+
+        private void percentTimer_Tick(object sender, EventArgs e) //0.2초마다 확률 계산하는 타이머
+        {
+            // 각 주자의 스킬 확률 계산
+            characterManager.character1.ActivateRandomSkill();
+            characterManager.character2.ActivateRandomSkill();
+            UpdateCharacterSpeedLabels(); //발동할때 속도 조정
+
+            // 주자 1의 스킬 지속 시간 체크
+            if (characterManager.character1.skillDuration > 0) //0.2초마다 1씩 감소
+            {
+                characterManager.character1.skillDuration--;
+                if (characterManager.character1.skillDuration == 0)
+                {
+                    characterManager.character1.ResetSpeed(); //속도 리셋
+                }
+            }
+
+            // 주자 2의 스킬 지속 시간 체크
+            if (characterManager.character2.skillDuration > 0)
+            {
+                characterManager.character2.skillDuration--;
+                if (characterManager.character2.skillDuration == 0)
+                {
+                    characterManager.character2.ResetSpeed(); //속도 리셋
+                }
+            }
+        }
+
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e) // 창을 닫아도 폼1이 안닫혀서 둘다 종료하게끔
+        {
+            Application.Exit();
+        }
 
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -291,6 +348,12 @@ namespace C__Assign_Team9
         }
 
         private void Lacation2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void testlabel1_Click(object sender, EventArgs e)
         {
 
         }
