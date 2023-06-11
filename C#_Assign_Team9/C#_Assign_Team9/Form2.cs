@@ -357,5 +357,10 @@ namespace C__Assign_Team9
         {
 
         }
+
+        private void percentTimer_Tick_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

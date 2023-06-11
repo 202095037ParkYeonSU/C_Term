@@ -51,6 +51,9 @@
             HowToPlayExplain = new Label();
             Location1 = new Label();
             Location2 = new Label();
+            percentTimer = new System.Windows.Forms.Timer(components);
+            testlabel1 = new Label();
+            testlabel3 = new Label();
             ((System.ComponentModel.ISupportInitialize)CharacterImage1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)CharacterImage2).BeginInit();
             panel1.SuspendLayout();
@@ -282,6 +285,29 @@
             Location2.Text = "Location2";
             Location2.Click += Lacation2_Click;
             // 
+            // percentTimer
+            // 
+            percentTimer.Interval = 200;
+            percentTimer.Tick += percentTimer_Tick_1;
+            // 
+            // testlabel1
+            // 
+            testlabel1.AutoSize = true;
+            testlabel1.Location = new Point(174, 458);
+            testlabel1.Name = "testlabel1";
+            testlabel1.Size = new Size(39, 15);
+            testlabel1.TabIndex = 20;
+            testlabel1.Text = "label1";
+            // 
+            // testlabel3
+            // 
+            testlabel3.AutoSize = true;
+            testlabel3.Location = new Point(769, 458);
+            testlabel3.Name = "testlabel3";
+            testlabel3.Size = new Size(39, 15);
+            testlabel3.TabIndex = 21;
+            testlabel3.Text = "label3";
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -290,6 +316,8 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(984, 561);
+            Controls.Add(testlabel3);
+            Controls.Add(testlabel1);
             Controls.Add(Location2);
             Controls.Add(Location1);
             Controls.Add(HowToPlayExplain);
@@ -343,5 +371,8 @@
         private Label HowToPlayExplain;
         private Label Location1;
         private Label Location2;
+        private System.Windows.Forms.Timer percentTimer;
+        private Label testlabel1;
+        private Label testlabel3;
     }
 }
